@@ -14,12 +14,12 @@ namespace RazorPagesMovie.Models
             using (var context = new MovieContext(
                 serviceProvider.GetRequiredService<DbContextOptions<MovieContext>>()))
             {
-                if (context.Movie.Any())
+                if (context.Movies.Any())
                 {
                     return;
                 }
 
-                context.Movie.AddRange(
+                context.Movies.AddRange(
                     new Movie
                     {
                         Title = "When Harry Met Sally",
